@@ -1,4 +1,3 @@
 # SpringHibernateMaven
-@Author CanhHung
-Spring with Hibernate use Maven
+@Author CanhHung - Spring with Hibernate use Maven
 
