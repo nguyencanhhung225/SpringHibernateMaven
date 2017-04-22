@@ -29,4 +29,12 @@ public class ProductController {
 		
 		return modelAndView;
 	}
+	
+	@RequestMapping(value = "/product-add")
+	public ModelAndView goAddProduct() {
+		
+		ModelAndView modelAndView = new ModelAndView("product-add");
+		
+		return modelAndView;
+	}
 }

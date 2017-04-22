@@ -6,23 +6,21 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Product List</title>
-	<link href="css/bootstrap.css" rel="stylesheet">
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 	
 	
 </head>
 <body>
-	<nav class="navbar navbar-inverse" style="border-radius:0px"></nav>
+	<jsp:include page="header.jsp"></jsp:include>
+	
 	<div class="container">
 		<h2>Product List</h2>
 		
 		<div class="row" style="padding: 20px 0px">
-			<div class="col-lg-6">
-				<button type="button" class="btn btn-success">Add new product</button>	
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<a href="product-add.html" type="button" class="btn btn-success">Add new product</a>	
 			</div>
 			
-			<div class="col-lg-6">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 				<div class="input-group">
 				<input type="text" class="form-control" placeholder="Search for ...">
 					<span class="input-group-btn">
@@ -34,9 +32,9 @@
 		
 		
 		
-		<table class="table table-hover table-bordered table-striped">
+		<table class="table table-hover table-bordered ">
 			<thead>
-				<tr>
+				<tr style="text-align: center;">
 					<th>ID</th>
 					<th>NAME</th>
 					<th>TRADEMARK</th>
@@ -63,11 +61,7 @@
 				</c:forEach>
 			</tbody>
 		</table>
-	<nav class="navbar-text navbar-right">&copy; CanhHung</nav>
 	</div>
-	
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
