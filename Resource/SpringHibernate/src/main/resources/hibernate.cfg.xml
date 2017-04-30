@@ -12,8 +12,10 @@
 		<property name=""></property>
 		<property name="current_session_context_class">thread</property>
 		<property name="connection.pool_size">100</property>
+		<property name="hibernate.enable_lazy_load_no_trans">true</property>
 		
 		<mapping class="com.hungnc.springhibernate.model.Product" />
+		<mapping class="com.hungnc.springhibernate.model.Category"/>
 		
 	</session-factory>
 </hibernate-configuration>

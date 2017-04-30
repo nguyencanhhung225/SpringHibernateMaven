@@ -5,9 +5,13 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Product List</title>
+	<title>Products</title>
 	
-	
+	<style type="text/css">
+		tbody tr td {
+			vertical-align: middle;
+		}
+	</style>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
@@ -33,8 +37,8 @@
 		
 		
 		<table class="table table-hover table-bordered ">
-			<thead>
-				<tr style="text-align: center;">
+			<thead style="text-align: center;">
+				<tr>
 					<th>ID</th>
 					<th>NAME</th>
 					<th>TRADEMARK</th>
@@ -46,16 +50,21 @@
 			</thead>
 			<tbody>
 				<c:forEach var="product" items="${msgListProduct}">
-					<tr>
-						<td>${product.id}</td>
-						<td>${product.name}</td>
-						<td>${product.trademark}</td>
-						<td>${product.price}</td>
-						<td>${product.image}</td>
-						<td>${product.idCategory}</td>
-						<td>
-							<a href="">Edit</a> |
-							<a href="">Remove</a>
+					<tr >
+						<td style="text-align: center; vertical-align: middle;">${product.id}</td>
+						<td style="text-align: center; vertical-align: middle;">${product.name}</td>
+						<td style="text-align: center; vertical-align: middle;">${product.trademark}</td>
+						<td style="text-align: center; vertical-align: middle;">${product.price}</td>
+						<td style="text-align: center;"><img src="<c:url value="${product.image}" />" width="120" height="120"/></td>
+						<td style="text-align: center; vertical-align: middle;">${product.category.name}</td>
+						<td style="text-align: center; vertical-align: middle;">
+							<a href="#" style="margin-right: 5px; text-decoration: none;">
+								<img src="<c:url value="/resources/images/edit.png" />"/>
+							</a>
+							
+							<a href="#" style="margin-left: 5px;">
+								<img src="<c:url value="/resources/images/delete.png" />"/>
+							</a>
 						</td>
 					</tr>
 				</c:forEach>

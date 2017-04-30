@@ -22,4 +22,12 @@ public class ProductDAOImpl implements ProductDAO {
 		
 	}
 
+	public static void main(String[] args) {
+		ProductDAO productDAO = new ProductDAOImpl();
+		List<Product> list = productDAO.getAll();
+		for (Product product : list) {
+			System.out.println(product.getName() + " - " + product.getCategory().getName());
+		}
+		System.out.println(list.size());
+	}
 }

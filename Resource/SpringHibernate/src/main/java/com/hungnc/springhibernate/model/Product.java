@@ -4,8 +4,11 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -29,30 +32,21 @@ public class Product implements Serializable {
 	@Column(name = "image")
 	private String image;
 
-	@Column(name = "id_category")
-	private int idCategory;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id_category", nullable = false)
+	private Category category;
 
 	public Product() {
 		super();
 	}
 
-	public Product(String name, String trademark, int price, String image, int idCategory) {
+	public Product(String name, String trademark, int price, String image, Category category) {
 		super();
 		this.name = name;
 		this.trademark = trademark;
 		this.price = price;
 		this.image = image;
-		this.idCategory = idCategory;
-	}
-
-	public Product(int id, String name, String trademark, int price, String image, int idCategory) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.trademark = trademark;
-		this.price = price;
-		this.image = image;
-		this.idCategory = idCategory;
+		this.category = category;
 	}
 
 	public int getId() {
@@ -95,12 +89,12 @@ public class Product implements Serializable {
 		this.image = image;
 	}
 
-	public int getIdCategory() {
-		return idCategory;
+	public Category getCategory() {
+		return category;
 	}
 
-	public void setIdCategory(int idCategory) {
-		this.idCategory = idCategory;
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 
 }
